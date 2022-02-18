@@ -38,6 +38,10 @@ scene.onOverlapTile(SpriteKind.Player, assets.tile`myTile7`, function (sprite, l
 scene.onOverlapTile(SpriteKind.Player, assets.tile`myTile12`, function (sprite, location) {
     game.over(false)
 })
+scene.onOverlapTile(SpriteKind.Player, assets.tile`myTile9`, function (sprite, location) {
+    tiles.placeOnRandomTile(mySprite, assets.tile`myTile6`)
+    scene.cameraFollowSprite(mySprite)
+})
 scene.onOverlapTile(SpriteKind.Player, assets.tile`myTile8`, function (sprite, location) {
     game.over(false)
 })
@@ -418,6 +422,7 @@ scene.setBackgroundImage(img`
     dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd
     dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd
     `)
+tiles.loadMap(tiles.createMap(tilemap`level4`))
 tiles.loadMap(tiles.createMap(tilemap`level2`))
 tiles.loadMap(tiles.createMap(tilemap`level3`))
 mySprite = sprites.create(img`
