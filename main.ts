@@ -31,6 +31,9 @@ scene.onOverlapTile(SpriteKind.Player, assets.tile`myTile15`, function (sprite, 
 scene.onOverlapTile(SpriteKind.Player, assets.tile`myTile13`, function (sprite, location) {
     game.over(false)
 })
+scene.onOverlapTile(SpriteKind.Player, assets.tile`myTile46`, function (sprite, location) {
+    game.over(false)
+})
 controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
     if (mySprite) {
         mySprite.setVelocity(80, 80)
@@ -59,6 +62,10 @@ scene.onOverlapTile(SpriteKind.Player, assets.tile`myTile12`, function (sprite, 
 scene.onOverlapTile(SpriteKind.Player, assets.tile`myTile9`, function (sprite, location) {
     effects.confetti.startScreenEffect()
     game.over(true)
+})
+scene.onOverlapTile(SpriteKind.Player, assets.tile`myTile29`, function (sprite, location) {
+    tiles.loadMap(tiles.createMap(tilemap`level16`))
+    setup()
 })
 scene.onOverlapTile(SpriteKind.Player, assets.tile`myTile36`, function (sprite, location) {
     tiles.loadMap(tiles.createMap(tilemap`level14`))

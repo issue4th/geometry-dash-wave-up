@@ -1,10 +1,11 @@
 {
-    "name": "geometry dash: wave up!",
+    "name": "geometry dash: wave up v0.25!",
     "description": "",
     "dependencies": {
         "device": "*",
         "tilemaps": "github:microsoft/pxt-tilemaps#v1.12.0",
-        "arcade-text": "github:microsoft/arcade-text#v1.3.0"
+        "arcade-text": "github:microsoft/arcade-text#v1.3.0",
+        "arcade-background-scroll": "github:microsoft/arcade-background-scroll#926e12eefffd09d453c7cde73f8d6ebd0e666d9d"
     },
     "files": [
         "main.blocks",
