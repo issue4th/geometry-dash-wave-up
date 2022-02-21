@@ -59,6 +59,10 @@ scene.onOverlapTile(SpriteKind.Player, assets.tile`myTile9`, function (sprite, l
     effects.confetti.startScreenEffect()
     game.over(true)
 })
+scene.onOverlapTile(SpriteKind.Player, assets.tile`myTile18`, function (sprite, location) {
+    tiles.loadMap(tiles.createMap(tilemap`level20`))
+    setup()
+})
 scene.onOverlapTile(SpriteKind.Player, assets.tile`myTile29`, function (sprite, location) {
     tiles.loadMap(tiles.createMap(tilemap`level16`))
     setup()
