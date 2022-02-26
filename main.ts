@@ -931,6 +931,37 @@ game.onUpdate(function () {
     }
 })
 game.onUpdate(function () {
+    for (let location3 of tiles.getTilesByType(assets.tile`myTile55`)) {
+        temporary = sprites.create(img`
+            . . . . . . . . . . . . . . . . 
+            . . . . . 6 . . 6 . . 6 . . . . 
+            . 6 . . 6 . . 6 . . 6 . . . . . 
+            . . 6 6 7 7 7 7 7 7 6 6 6 . . . 
+            . . . 7 6 6 7 7 7 6 7 7 . 6 . . 
+            . 6 . 7 7 6 7 6 6 7 7 7 . . . . 
+            . . 6 7 6 6 6 6 6 6 6 7 6 . . . 
+            . . . 7 7 6 7 6 6 7 7 7 . 6 . . 
+            . 6 . 7 6 6 6 6 7 6 7 7 . . . . 
+            . . 6 7 6 6 6 6 7 6 6 7 6 . . . 
+            . . . 7 6 7 7 6 6 7 6 7 . 6 . . 
+            . 6 . 7 6 7 7 7 7 6 7 6 . . . . 
+            . . 6 7 6 7 7 7 7 7 6 6 6 . . . 
+            . . . . 6 . . 6 . . 6 . . 6 . . 
+            . . . 6 . . 6 . . 6 . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            `, SpriteKind.Enemy)
+        temporary.startEffect(effects.coolRadial)
+        tiles.placeOnTile(temporary, location3)
+        tiles.setTileAt(location3, assets.tile`transparency16`)
+        animation.runMovementAnimation(
+        temporary,
+        "c 0 -100 0 100 0 0",
+        2000,
+        true
+        )
+    }
+})
+game.onUpdate(function () {
     for (let location3 of tiles.getTilesByType(assets.tile`myTile51`)) {
         temporary = sprites.create(img`
             . . . . . . . . . . . . . . . . 
@@ -1083,5 +1114,12 @@ game.onUpdate(function () {
         100,
         true
         )
+    }
+})
+game.onUpdate(function () {
+    if (player_sprite) {
+        if (player_sprite.tileKindAt(TileDirection.Center, assets.tile`myTile54`) || player_sprite.tileKindAt(TileDirection.Center, assets.tile`myTile53`)) {
+            game.over(false)
+        }
     }
 })
