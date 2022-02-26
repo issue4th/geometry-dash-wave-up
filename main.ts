@@ -439,9 +439,16 @@ scene.onOverlapTile(SpriteKind.selector, assets.tile`myTile11`, function (sprite
         7777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777
         `)
 })
-scene.onOverlapTile(SpriteKind.Player, assets.tile`myTile29`, function (sprite, location) {
-    tiles.loadMap(tiles.createMap(tilemap`level16`))
-    setup_level()
+scene.onOverlapTile(SpriteKind.Player, assets.tile`myTile54`, function (sprite, location) {
+    player_sprite.vy = -80
+    player_sprite.setImage(img`
+        . . . 5 5 . 
+        . 5 5 9 9 5 
+        5 9 9 9 9 5 
+        . 5 9 9 5 . 
+        . . 5 9 5 . 
+        . . . 5 . . 
+        `)
 })
 scene.onOverlapTile(SpriteKind.selector, assets.tile`myTile36`, function (sprite, location) {
     tiles.loadMap(tiles.createMap(tilemap`level14`))
@@ -495,6 +502,10 @@ function setup_level () {
 }
 scene.onOverlapTile(SpriteKind.selector, assets.tile`myTile45`, function (sprite, location) {
     controller.moveSprite(selector_sprite, 400, 400)
+})
+scene.onOverlapTile(SpriteKind.selector, assets.tile`myTile29`, function (sprite, location) {
+    tiles.loadMap(tiles.createMap(tilemap`level16`))
+    setup_level()
 })
 scene.onOverlapTile(SpriteKind.Player, assets.tile`myTile10`, function (sprite, location) {
     scene.setBackgroundImage(img`
@@ -620,9 +631,24 @@ scene.onOverlapTile(SpriteKind.Player, assets.tile`myTile10`, function (sprite, 
         cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc
         `)
 })
+scene.onOverlapTile(SpriteKind.selector, assets.tile`myTile19`, function (sprite, location) {
+    tiles.loadMap(tiles.createMap(tilemap`level32`))
+    setup_level()
+})
 scene.onOverlapTile(SpriteKind.selector, assets.tile`myTile20`, function (sprite, location) {
     tiles.loadMap(tiles.createMap(tilemap`level3`))
     setup_level()
+})
+scene.onOverlapTile(SpriteKind.Player, assets.tile`myTile53`, function (sprite, location) {
+    player_sprite.vy = 80
+    player_sprite.setImage(img`
+        . . . 5 . . 
+        . . 5 9 5 . 
+        . 5 9 9 5 . 
+        5 9 9 9 9 5 
+        . 5 5 9 9 5 
+        . . . 5 5 . 
+        `)
 })
 scene.onOverlapTile(SpriteKind.selector, assets.tile`myTile27`, function (sprite, location) {
     tiles.loadMap(tiles.createMap(tilemap`level5`))
