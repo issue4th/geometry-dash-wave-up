@@ -134,6 +134,10 @@ scene.onOverlapTile(SpriteKind.selector, assets.tile`myTile10`, function (sprite
         cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc
         `)
 })
+scene.onOverlapTile(SpriteKind.selector, assets.tile`myTile33`, function (sprite, location) {
+    tiles.loadMap(tiles.createMap(tilemap`level34`))
+    setup_level()
+})
 controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
     if (player_sprite) {
         player_sprite.vy = -80
@@ -452,6 +456,10 @@ scene.onOverlapTile(SpriteKind.Player, assets.tile`myTile54`, function (sprite, 
 })
 scene.onOverlapTile(SpriteKind.selector, assets.tile`myTile36`, function (sprite, location) {
     tiles.loadMap(tiles.createMap(tilemap`level14`))
+    setup_level()
+})
+scene.onOverlapTile(SpriteKind.selector, assets.tile`myTile32`, function (sprite, location) {
+    tiles.loadMap(tiles.createMap(tilemap`level36`))
     setup_level()
 })
 sprites.onOverlap(SpriteKind.Player, SpriteKind.coin, function (sprite, otherSprite) {
