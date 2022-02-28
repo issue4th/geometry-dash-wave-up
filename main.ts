@@ -1220,6 +1220,13 @@ scene.cameraFollowSprite(selector_sprite)
 tiles.placeOnRandomTile(selector_sprite, assets.tile`myTile6`)
 game.onUpdate(function () {
     if (player_sprite) {
+        if (player_sprite.tileKindAt(TileDirection.Center, assets.tile`myTile54`) || player_sprite.tileKindAt(TileDirection.Center, assets.tile`myTile53`)) {
+            game.over(false)
+        }
+    }
+})
+game.onUpdate(function () {
+    if (player_sprite) {
         player_sprite.vx = 80
     }
 })
@@ -1407,12 +1414,5 @@ game.onUpdate(function () {
         100,
         true
         )
-    }
-})
-game.onUpdate(function () {
-    if (player_sprite) {
-        if (player_sprite.tileKindAt(TileDirection.Center, assets.tile`myTile54`) || player_sprite.tileKindAt(TileDirection.Center, assets.tile`myTile53`)) {
-            game.over(false)
-        }
     }
 })
